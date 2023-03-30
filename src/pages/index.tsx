@@ -17,7 +17,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1>Manual Setup</h1>
         <p>
-          Project is about ecommerce website. I'm creating this website to
+          Project is about ecommerce website. I am creating this website to
           develop my skills
         </p>
       </main>
