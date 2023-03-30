@@ -9,6 +9,10 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      josefin: ["Josefin Sans", "sans-serif"],
+      lato: ["Lato", "sans-serif"]
+    },
     extend: {},
   },
   plugins: [],
