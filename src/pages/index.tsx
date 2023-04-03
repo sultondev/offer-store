@@ -2,10 +2,20 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { Header } from '@/components/Header'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+// const inter = Inter({ subsets: ['latin'] })
 
-const inter = Inter({ subsets: ['latin'] })
+export async function getStaticProps(param: {locale: string}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(param.locale ?? 'en', ['home']))
+    }
+  }
+}
 
 export default function Home() {
+  const { t } = useTranslation()
   return (
     <>
       <Head>
@@ -21,6 +31,7 @@ export default function Home() {
           Project is about ecommerce website. I am creating this website to
           develop my skills
         </p>
+        <p>{ t('home:ft_products')}</p>
       </main>
     </>
   )
